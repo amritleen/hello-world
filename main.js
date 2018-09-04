@@ -4,6 +4,8 @@ $(document).ready(function () {
   console.log("im in js file");
 });
 function onSignIn(googleUser) {
+  var id_token = googleUser.getAuthResponse().id_token;
+  console.log('ID TOKEN : ' + id_token);
   var profile = googleUser.getBasicProfile();
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
   console.log('Name: ' + profile.getName());
